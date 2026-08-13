@@ -1,46 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofía Denis Agüero | Analista de Sistemas & Web Developer</title>
     <link rel="stylesheet" href="index.css">
-    <title>Sofía Agüero</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="contenedor"> 
 
-        <div class="presentacion"></div>
+    <nav class="navbar">
+        <div class="logo">Sofía Agüero</div>
+        <ul class="nav-links">
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
-        <div class="areasPresentacion">
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Sofía Denis Agüero</h1>
+            <h2>Técnica Superior en Análisis de Sistemas de Computación | Desarrolladora Web</h2>
+            <p>Comprometida, proactiva y orientada a la resolución de problemas y al trabajo en equipo.</p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn secondary">Contacto</a>
+            </div>
+        </div>
+    </header>
 
-            <a href="sobreMi.html"  class="sobreMiPresentacion iconosPresentacion">
-                <p class="descripcionPresentacion">Sobre mi</p> 
+    <section id="sobre-mi" class="section">
+        <h2>Sobre mí</h2>
+        <div class="sobre-mi-container">
+            <div class="perfil-card">
+                <p>
+                    Me destaco por mi compromiso, actitud proactiva y ganas constantes de aprender. Disfruto del trabajo en equipo y valoro el intercambio de ideas y devoluciones, considerándolos oportunidades clave para seguir evolucionando profesionalmente.
+                </p>
+                <p>
+                    Combinando mi formación en <strong>Análisis de Sistemas (ISSD)</strong> y <strong>Desarrollo Web (NUCBA)</strong> con mi experiencia en entornos exigentes de alta responsabilidad, busco aportar valor en el diseño, desarrollo y gestión de proyectos IT.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="section bg-alt">
+        <h2>Herramientas & Tecnologías</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Desarrollo & Lenguajes</h3>
+                <ul>
+                    <li>HTML5 / CSS3 / JavaScript</li>
+                    <li>Java / PHP</li>
+                    <li>C# .NET (Inicial)</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>Bases de Datos & Analítica</h3>
+                <ul>
+                    <li>MySQL / SQL</li>
+                    <li>Power BI</li>
+                    <li>Análisis de Procesos</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-list-check"></i>
+                <h3>Gestión, QA & Diseño</h3>
+                <ul>
+                    <li>Jira / Confluence / Zephyr</li>
+                    <li>Git / GitHub</li>
+                    <li>Figma / Canva / CapCut</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Habilidades Blandas</h3>
+                <ul>
+                    <li>Trabajo en equipo</li>
+                    <li>Feedback constructivo</li>
+                    <li>Pensamiento analítico</li>
+                    <li>Adaptabilidad y aprendizaje</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="experiencia" class="section">
+        <h2>Experiencia Laboral</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="status finalizado">2019 - 2024</span>
+                <h3>Instrumentadora Quirúrgica</h3>
+                <p><strong>Sanatorio de la Cañada</strong> (Área: Quirófano)</p>
+                <p class="exp-desc">
+                    Desempeño en entorno de alta exigencia, trabajo bajo presión, coordinación meticulosa de procesos, protocolos de precisión y trabajo multidisciplinario en equipo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="section bg-alt">
+        <h2>Proyectos Destacados</h2>
+        <div class="proyectos-grid">
+            
+            <article class="proyecto-card">
+                <div class="proyecto-header">
+                    <h3>Superadmin - Gestión de Supermercado</h3>
+                    <span class="badge">Proyecto Académico Colaborativo</span>
+                </div>
+                <p>
+                    Sistema de gestión integral para la administración de inventario, stock y procesos comerciales, desarrollado colaborativamente como proyecto de la facultad.
+                </p>
+                <ul class="tech-stack">
+                    <li>Java / PHP</li>
+                    <li>MySQL</li>
+                    <li>Análisis de Sistemas</li>
+                </ul>
+                <div class="proyecto-links">
+                    <a href="https://github.com/tu-usuario/superadmin" target="_blank" class="link-btn"><i class="fa-brands fa-github"></i> Código / Repositorio</a>
+                </div>
+            </article>
+
+            <article class="proyecto-card">
+                <div class="proyecto-header">
+                    <h3>Portfolio Profesional & Proyectos Web</h3>
+                    <span class="badge">Desarrollo Web</span>
+                </div>
+                <p>
+                    Diseño y desarrollo de sitios y maquetaciones web interactivas enfocadas en la experiencia de usuario y diseño adaptativo.
+                </p>
+                <ul class="tech-stack">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <div class="proyecto-links">
+                    <a href="https://sofia-aguero.vercel.app" target="_blank" class="link-btn"><i class="fa-solid fa-globe"></i> Ver Demo</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="formacion" class="section">
+        <h2>Formación Académica & Cursos</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <span class="status finalizado">2026 - Finalizado</span>
+                <h3>Tecnicatura Superior en Análisis de Sistemas de Computación</h3>
+                <p>Instituto Superior Santo Domingo (ISSD)</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="status finalizado">2025 - Finalizado</span>
+                <h3>Curso de Contenidos Digitales</h3>
+                <p>Academia de Marketing con Belu</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="status finalizado">2022 - Finalizado</span>
+                <h3>Desarrollo Web</h3>
+                <p>NUCBA</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="section bg-alt">
+        <h2>Contacto</h2>
+        <p class="contacto-intro">Córdoba, Capital | Disponible para propuestas y desafíos en IT</p>
+        
+        <div class="contacto-grid">
+            <a href="mailto:sofiadenisaguero@gmail.com" class="contacto-card">
+                <i class="fa-solid fa-envelope"></i>
+                <span>sofiadenisaguero@gmail.com</span>
             </a>
-           
-
-            <a href="habilidades.html" class="habilidadesPresentacion iconosPresentacion">
-                
-                    <p class="descripcionPresentacion">Habilidades</p>
+            <a href="tel:3512130715" class="contacto-card">
+                <i class="fa-solid fa-phone"></i>
+                <span>351-2130715</span>
             </a>
-
-         
-            <a href="https://linktr.ee/sofiaaguero" class="proyectosPresentacion iconosPresentacion">
-               <p class="descripcionPresentacion">Proyectos</p>
+            <a href="https://sofia-aguero.vercel.app" target="_blank" class="contacto-card">
+                <i class="fa-solid fa-globe"></i>
+                <span>sofia-aguero.vercel.app</span>
             </a>
+        </div>
+    </section>
 
-
-            <a href="formacion.html" class="formacionPresentacion iconosPresentacion">
-               <p class="descripcionPresentacion">Formación</p>
-            </a>
-
-
-            <a href="contacto.html" class="contactoPresentacion iconosPresentacion">
-               <p class="descripcionPresentacion">Contacto</p>
-            </a>
-
-        </div>      
-
-    </div>
+    <footer>
+        <p>&copy; 2026 Sofía Denis Agüero - Tec. Sup. en Análisis de Sistemas</p>
+    </footer>
 
 </body>
 </html>
