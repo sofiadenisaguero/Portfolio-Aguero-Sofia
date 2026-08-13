@@ -253,6 +253,40 @@
     <footer>
         <p>&copy; 2026 Sofía Denis Agüero - Tec. Sup. en Análisis de Sistemas</p>
     </footer>
+<script>
+        const track = id = document.getElementById('carruselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const cards = document.querySelectorAll('.carrusel-card');
 
+        let currentIndex = 0;
+
+        function updateCarrusel() {
+            const cardWidth = cards[0].clientWidth + 24;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; 
+            }
+            updateCarrusel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = cards.length - 1; 
+            }
+            updateCarrusel();
+        });
+
+        window.addEventListener('resize', updateCarrusel);
+    </script>
+</body>
+</html>
 </body>
 </html>
