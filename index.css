@@ -1,109 +1,134 @@
-body {
+/* ==========================================================================
+   1. ESTILOS GENERALES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
     background-image: url(img/fondo.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    display: grid;
-    place-items: center;
+    background-attachment: fixed;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-/*----------------------- HOME ---------------------------------- */
+
 a {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* ==========================================================================
+   2. HOME
+   ========================================================================== */
 .contenedor {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 20% 50% 20%;
+    grid-template-rows: 20% 50% 30%;
     justify-items: center;
     align-items: center;
 }
+
 .presentacion {
     width: 40vw;
     height: 50vh;
     background-image: url(img/dev.png);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     grid-column: 2;
     grid-row: 2;
     justify-self: center;
 }
+
 .areasPresentacion {
-    width: 60%;
+    width: 100%;
+    max-width: 600px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
     gap: 10px;
     grid-column: 2;
     grid-row: 3;
     justify-self: center;
     align-self: start;
-    margin-left: 55px;
 }
+
 .iconosPresentacion {
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     width: 60px;
     height: 60px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
+
 .iconosPresentacion:hover {
-    transform: scale(1.4);
-    filter: drop-shadow(5px 5px 10px rgb(218, 16, 113)) invert(80%);
+    transform: scale(1.2);
+    filter: drop-shadow(0px 5px 10px rgba(218, 16, 113, 0.8)) invert(80%);
 }
+
 .descripcionPresentacion {
     font-size: 12px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 500;
     color: rgb(30, 30, 30);
     text-align: center;
     margin-top: 65px;
 }
-.sobreMiPresentacion { background-image: url(img/info.png);}
-.habilidadesPresentacion {background-image: url(img/habilidades.png);}
-.proyectosPresentacion {    background-image: url(img/proyectos.png);}
-.formacionPresentacion {background-image: url(img/formacion.png);}
-.contactoPresentacion {background-image: url(img/contacto.png);}
 
-/*-------------------------SOBRE MÍ-----------------------------------*/
+.sobreMiPresentacion { background-image: url(img/info.png); }
+.habilidadesPresentacion { background-image: url(img/habilidades.png); }
+.proyectosPresentacion { background-image: url(img/proyectos.png); }
+.formacionPresentacion { background-image: url(img/formacion.png); }
+.contactoPresentacion { background-image: url(img/contacto.png); }
+
+/* ==========================================================================
+   3. SOBRE MÍ
+   ========================================================================== */
 .contenedorSobreMi {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 40% 55% 5%;
     grid-template-rows: 10% 65% 25%;
     justify-items: center;
     align-items: center;
 }
+
 .miFoto {
-    width: 70%;
-    height: 85%;
+    width: 250px;
+    height: 250px;
     background-image: url(img/miFoto.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     border-radius: 50%;
     filter: drop-shadow(10px 5px 20px rgba(7, 36, 43, 0.6));
-    opacity: 90%;
+    opacity: 0.9;
     justify-self: center;
-    align-self: start;
-    margin-top: 10px;
+    align-self: center;
     grid-column: 1;
     grid-row: 2;
 }
+
 .fondoDescripcion {
-    width: 50vw;
-    height: 45vh;
+    width: 90%;
+    max-width: 650px;
+    min-height: 40vh;
+    padding: 20px;
     background-color: #184442;
-    border-radius: 10%;
+    border-radius: 20px;
     box-shadow: -5px -5px 5px 5px rgba(14, 70, 84, 0.60);
     display: flex;
     align-items: center;
@@ -112,77 +137,89 @@ a {
     grid-column: 2;
     grid-row: 2;
 }
+
 .fondoDescripcion p {
     width: 90%;
     font-size: 1.1rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     word-spacing: 2px;
-    line-height: 35px;
+    line-height: 1.8;
     color: whitesmoke;
 }
+
 .piePagina {
-    width: 100vw;
-    height: 15vh;
+    width: 100%;
+    min-height: 12vh;
+    padding: 10px 0;
     background-color: #194745;
-    border-radius: 35% 35% 0% 0%;
-    box-shadow: 0px -20px 19px 0px rgba(14, 70, 84, 0.60);
+    border-radius: 35px 35px 0 0;
+    box-shadow: 0px -10px 19px 0px rgba(14, 70, 84, 0.60);
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-column: 1 / 4;
+    grid-column: 1 / -1;
     grid-row: 3;
     align-self: end;
 }
+
 .areas {
-    width: 80%;
+    width: 90%;
+    max-width: 800px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     justify-items: center;
     align-self: center;
 }
+
 .iconos {
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: scale(1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
+
 .iconos:hover {
     transform: scale(1.2);
     filter: drop-shadow(5px 5px 10px rgb(218, 16, 113)) invert(80%);
 }
+
 .descripcion {
     font-size: 12px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-weight: 500;
     color: rgb(30, 30, 30);
     text-align: center;
     margin-top: 50px;
 }
-.sobreMi { background-image: url(img/info.png);}
-.habilidades { background-image: url(img/habilidades.png);}
-.proyectos {background-image: url(img/proyectos.png);}
-.formacion {background-image: url(img/formacion.png);}
-.contacto { background-image: url(img/contacto.png);}
 
-/*-------------------HABILIDADES----------------------------------*/
-.contenedorHabilidades{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.sobreMi { background-image: url(img/info.png); }
+.habilidades { background-image: url(img/habilidades.png); }
+.proyectos { background-image: url(img/proyectos.png); }
+.formacion { background-image: url(img/formacion.png); }
+.contacto { background-image: url(img/contacto.png); }
+
+/* ==========================================================================
+   4. HABILIDADES
+   ========================================================================== */
+.contenedorHabilidades {
     color: whitesmoke;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(10, 10%);
-    grid-template-rows:30% repeat(4,17.5%);   
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 25% repeat(3, auto) 15%;
+    gap: 10px;
     justify-items: center;
     align-items: center;
+    padding-top: 20px;
 }
+
 .fondoH {
     width: 100%;
     height: 100%;
@@ -190,730 +227,438 @@ a {
     grid-row: 1;
     align-self: start;
 }
+
 .fondoH img {
     width: 80%;
+    max-width: 150px;
     height: auto;
     object-fit: cover;
-    margin-top: -35px;
 }
+
 .tituloHabilidades {
     width: 90%;
-    height: 30%;
-    grid-column: 4 / 8;
+    grid-column: 3 / 9;
     grid-row: 1;
     background-color: #184946;
-    opacity: 90%;
-    border-radius:10%;
+    opacity: 0.9;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
 }
+
 .tituloHabilidades h2 {
-    grid-column: 2;
-    width: 99%;
     font-size: 1.5rem;
     text-align: center;
     letter-spacing: 2px;
-    align-self: center;
 }
+
 .titulos {
     width: 100%;
-    height: 85%;
     text-align: center;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 10px;
     background-color: #184442;
     color: aliceblue;
     border-radius: 10px;
     box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5);
-    align-content: center;
 }
+
 .conocimiento {
-    grid-column: 2 / 3;
+    grid-column: 2 / 4;
     grid-row: 2;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
-.fondoIconos {    
-    width: 97%;
-    height: 85%;
+
+.fondoIconos {
+    width: 100%;
     display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    flex-wrap: wrap;
     background-color: #184442;
     padding: 10px;
     border-radius: 10px;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
-    gap:7%;
+    gap: 15px;
 }
+
 .fondoIconosHabilidades {
-    grid-column: 3 / 10;
+    grid-column: 4 / 10;
     grid-row: 2;
-    display: flex;
     box-shadow: inset 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
+
 .iconosHabilidades img {
-    width: 70%;
-    max-width: 100px;
+    width: 50px;
+    height: auto;
 }
+
 .mejorando {
-    border-radius: 0% 0% 0% 10%;
-    grid-column: 2 / 3;
+    grid-column: 2 / 4;
     grid-row: 3;
-    box-shadow: inset 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
+
 .fondoIconosMejorando {
-    width: 95%;
-    grid-column: 3 / 7;
+    width: 100%;
+    grid-column: 4 / 7;
     grid-row: 3;
     box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
+
 .aprendiendo {
     width: 100%;
-    grid-column: 7;
+    grid-column: 7 / 8;
     grid-row: 3;
-    border-radius: 0%;
-    justify-content: start;
 }
+
 .fondoAprendiendo {
-    width: 90%;
-    border-radius: 0% 0% 10% 0%;
+    width: 100%;
     grid-column: 8 / 10;
     grid-row: 3;
-    justify-content: center;    
     box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
+
 .fondoAprendiendo h4 {
-    font-size: 120%;
+    font-size: 1rem;
     text-align: center;
 }
+
 .hBlandas {
     width: 100%;
-    height: 55%;
-    gap: 3%;
-    align-self: center;
-    display: flex;
-    justify-content: space-around;
     grid-column: 2 / 10;
     grid-row: 4;
-    background-color: transparent;
-    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
     border-top: 2px dashed whitesmoke;
     padding-top: 15px;
 }
-.hBlandas .titulos { border-radius: 10%;}
 
-.comunicacion {
+.hBlandas .titulos {
+    flex: 1 1 150px;
+    max-width: 200px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.comunicacion, .resoluConflictos, .gestionTiempo {
     background-color: #8fab99;
     color: black;
-    font-weight: 700;
 }
-.trabajoEquipo {
+
+.trabajoEquipo, .aprendizajeContinuo {
     background-color: #184442;
     color: whitesmoke;
-    font-weight: 700;
 }
-.resoluConflictos {
-    background-color: #8fab99;
-    color: black;
-    font-weight: 700;
-}
-.aprendizajeContinuo {
-    background-color: #184442;
-    color: whitesmoke;
-    font-weight: 700;
-}
-.gestionTiempo {
-    background-color: #8fab99;
-    color: black;
-    font-weight: 700;
-}
+
 .contenedorHabilidades .piePagina {
     grid-row: 5;
-    grid-column:1/11 ;
-    align-self: end;
+    grid-column: 1 / 11;
 }
-/*-----------------------------FORMACION------------------------------*/
- .contenedorFormacion{
-    width: 100vw;
-    height: 100vh;
-    grid-template-columns:repeat(10, 14.2%);
-    grid-template-rows:25.5% repeat(3,16.5%) repeat(2,5.25%) 14.4%;
-    
-    justify-items: stretch;
-    align-items: center;
-    justify-content: stretch;   
- }
- .contenedorFormacion .fondoH{
-    width: 71%;
-    height: 71%;
-    grid-column:1/3 ;
-    grid-row:1;
- }
- .contenedorFormacion .tituloHabilidades{
-    justify-content: center; 
-    align-self: end;   
-    grid-column:3/6;
-    grid-row:1;
-}
-.contenedorFormacion .tituloHabilidades h2{
-    align-content: center;
-    letter-spacing: 2px;
-}
-.fondoFormacion{
-    width: 80%;
-    height: 100%;
-    margin-top: 8px;
-    border-radius: 0% 0% 5% 6%; 
-    grid-column:2/7;
-    grid-row:2/6;
-    justify-self: center;
-    align-content: center;
-    background-color: #184442;
-}
-.desarrollo{
+
+/* ==========================================================================
+   5. FORMACIÓN
+   ========================================================================== */
+.contenedorFormacion {
     width: 100%;
-    height: 33%;
-    align-self: center;
-    border-radius: 0px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 20% auto 15%;
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+}
+
+.contenedorFormacion .fondoH {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.contenedorFormacion .tituloHabilidades {
+    grid-column: 3 / 9;
+    grid-row: 1;
+}
+
+.fondoFormacion {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+    grid-column: 2 / 10;
+    grid-row: 2;
+    background-color: #184442;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.desarrollo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.desarrollo > div:nth-child(1) {
+    flex: 2;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #8fab99;
     color: black;
     text-align: center;
-    font-size: 120%;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;    
-    display: grid;
-    grid-template-columns:60% 40% ;
-    grid-template-rows:  100%;
+    transition: box-shadow 0.3s ease;
 }
-.desarrollo :nth-child(1){
-    width: 90%;
-    height: 70%;
-    margin: 5%;
-    border-radius: 0% 0%  5% 5% ;
-    background-color: #8fab99;
-    align-content: center;
-    align-self: center;
-    grid-column: 1;
-    grid-row: 1;
-}
-.desarrollo :nth-child(1):hover{-webkit-box-shadow: inset 29px 45px 51px -40px rgba(0,0,0,0.51);}
-.desarrollo :nth-child(2){
-    width: 80%;
-    height: 70%;
-    grid-column: 2;
-    grid-row: 1;
-    border-radius: 0% 0%  5% 5% ;
-    justify-items: center;
-    align-content: center;
-    justify-self: center;
-    align-self: center;
-}
-.desarrollo :nth-child(2):hover{-webkit-box-shadow: inset 29px 45px 51px -40px rgba(53, 12, 33, 0.51);}
-.finalizado{background-color: #71a48b;}
 
-.analista{ grid-row:2;}
-.desarrollo .analista:nth-child(1){grid-column: 1;}
-.desarrollo .analista:nth-child(2){
-    grid-column:2;    
-    grid-row:2;
+.desarrollo > div:nth-child(1):hover {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-.ciberseg{ grid-row:3;}
-.desarrollo  .ciberseg:nth-child(1){grid-column: 1;}
-.desarrollo  .ciberseg:nth-child(2){grid-column: 2;}
-.enCurso{background-color: #bc9c7e;}
-.contenedorFormacion .piePagina{
-    grid-row: 7;
-    align-content: end;
+
+.desarrollo > div:nth-child(2) {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
 }
-/* ---------------------------CONTACTO---------------------------------*/
-.contenedorContacto{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns:repeat(5,20%);
-    grid-template-rows:repeat(4,21.4%) 14.4%;    
-    justify-items: stretch;
-    align-items: center;
-    justify-content: stretch;
-    align-content: center;
+
+.desarrollo > div:nth-child(2):hover {
+    box-shadow: inset 0px 0px 10px rgba(53, 12, 33, 0.51);
 }
-.fondoA{
+
+.finalizado { background-color: #71a48b; color: black; }
+.enCurso { background-color: #bc9c7e; color: black; }
+
+.contenedorFormacion .piePagina {
+    grid-row: 3;
+    grid-column: 1 / 11;
+}
+
+/* ==========================================================================
+   6. CONTACTO
+   ========================================================================== */
+.contenedorContacto {
     width: 100%;
-    height: 100%;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 4;   
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 20% auto auto 15%;
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
 }
-.fondoA img{
+
+.fondoA {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.fondoA img {
     width: 80%;
+    max-width: 150px;
     height: auto;
-    margin-left: 20px;
-     align-content: center;
-    justify-content: center;
 }
-.bloques{
-    width: 70%;
-    height: 100%;
+
+.bloques {
+    width: 80%;
+    max-width: 120px;
+    padding: 10px;
     display: flex;
-    align-content: center;
     align-items: center;
     justify-content: center;
     background-color: #8fab99;
-    -webkit-box-shadow: inset 29px 45px 51px -40px rgba(53, 12, 33, 0.51);    
-    border-radius: 10% 10% 0% 0%;
-    margin-top: 20px;
-    grid-column-start:3;  
-    grid-row-start:2;
+    box-shadow: inset 0px 0px 10px rgba(53, 12, 33, 0.51);
+    border-radius: 10px 10px 0 0;
 }
-.bloques img{
-    width: 50%;
-    height: 70%;
+
+.bloques img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
 }
-.linkedin{
-    grid-column-start:3;  
-    grid-row-start:2;
-}.email{
-    grid-column-start:4;  
-    grid-row-start:2;
+
+.bloques img:hover {
+    transform: scale(1.15);
 }
-.telefono{
-    grid-column-start:5;  
-    grid-row-start:2;
-}
-.descripcionContacto{
-    width: 71%;
-    height: 50%;
-    border-radius: 0% 0% 10% 10%;    
-    margin-top: 12px;
+
+.linkedin { grid-column: 3; grid-row: 2; }
+.email { grid-column: 4; grid-row: 2; }
+.telefono { grid-column: 5; grid-row: 2; }
+
+.descripcionContacto {
+    width: 80%;
+    max-width: 120px;
+    padding: 15px 5px;
+    border-radius: 0 0 10px 10px;
     background-color: #184442;
-    -webkit-box-shadow: inset 29px 45px 51px -40px rgba(53, 12, 33, 0.51);
-    grid-column-start:3; 
-    grid-row-start:3 ;    
-    align-content: center;
-    align-self: start;
+    box-shadow: inset 0px 0px 10px rgba(53, 12, 33, 0.51);
     text-align: center;
-    font-size: 120%;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
     font-weight: 500;
     color: whitesmoke;
 }
-.bloques>img:hover{
-   width: 65%;
-   height: 74%;
-   justify-content: end;
-}
-.linkdn{ grid-column-start:3;}
-.mail{grid-column-start:4;}
-.tel{grid-column-start:5;}
-.contenedorContacto .piePagina{
-    height: 14.4vh;
-    align-self: end;
-    grid-row: 5;
-}
-/* ---------------------------- MEDIA QUERIES -------------------------- */
-@media (max-width: 1024px) {
-    /*-------------------HOME------------------*/
-    .presentacion {
-        width: 50vw;
-        height: 40vh;
-    }
-    .areasPresentacion {
-        width: 70%;
-        grid-template-columns: repeat(5, 1fr);
-        margin-left: 20px;
-    }
-    /*------------------SOBRE MI-----------------*/
-    .miFoto {
-        width: 90%;
-        height: 80%;
-        align-self: center;
-        margin-top: -10px;
-    }
-    .fondoDescripcion {
-        width: 50vw;
-        height: 48vh;
-    }
-    /*--------------------HABILIDADES-------------*/
-    .contenedorHabilidades {grid-template-columns: repeat(7, 1fr);}
-    .tituloHabilidades {grid-column: 3 / 6;}
-    .fondoIconosHabilidades {grid-column: 3 / 7;}
-    .fondoIconosMejorando{grid-column: 3 / 5;}
-    .aprendiendo{ grid-column: 5;}
-    .fondoAprendiendo{grid-column: 6;}
-    .hBlandas {grid-column: 2 / 7;}
-    
-    /*------------FORMACION------------------------*/
-    .contenedorFormacion .fondoH{grid-column:1/4 ;}
-    .fondoFormacion{width: 100%;}
+
+.linkdn { grid-column: 3; grid-row: 3; }
+.mail { grid-column: 4; grid-row: 3; }
+.tel { grid-column: 5; grid-row: 3; }
+
+.contenedorContacto .piePagina {
+    grid-row: 4;
+    grid-column: 1 / 6;
 }
 
-@media (max-width: 768px) {
-     /*--------------------HOME--------------------*/
-    .contenedor {
-        grid-template-columns: 5% 90% 5%;
-        grid-template-rows: 10% 50% 30% 10%;
-    }
+/* ==========================================================================
+   7. MEDIA QUERIES (RESPONSIVE DESIGN)
+   ========================================================================== */
+
+/* Tablet & Laptop Pantallas Medias */
+@media (max-width: 1024px) {
     .presentacion {
         width: 60vw;
-        height: 30vh;
+        height: 35vh;
     }
-    .areasPresentacion {
-        width: 100%;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 1fr;
-        gap: 5px;
-        margin-left: 70px;
-    }
-    .iconosPresentacion {
-        width: 50px;
-        height: 50px;
-    }
-    .descripcionPresentacion {
-        font-size: 10px;
-        margin-top: 50px;
-    }
-    /*-----------------------SOBRE MI---------------*/
-    .contenedorSobreMi {
-        grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 40% 40% 20%;
-    }
-    .miFoto {
-        width: 50%;
-        height: 100%;
-        grid-row: 1;
-        grid-column: 2;
-    }
-    .fondoDescripcion {
-        width: 80vw;
-        height: 40vh;
-    }
-    .areas {
-        width: 100%;
-        margin-left: 0px;
-    }
-    .iconos {
-        width: 50px;
-        height: 50px;
-    }
-    .descripcion {
-        font-size: 10px;
-        margin-top: 50px;
-    }
-    /*------------------HABILIDADES-------------------*/
-    .contenedorHabilidades{grid-template-columns: repeat(8,1fr); }    
-    .tituloHabilidades {grid-column: 3 / 6; }
-    .fondoIconosHabilidades {
-        grid-column: 3 / 8;
-        width: 90%;
-        justify-self: start;
-    }
-    .fondoIconosMejorando{
-        grid-column: 3 / 6;
-        width: 100%;
-        justify-self: start;    
-    }
-    .aprendiendo{
-        grid-column: 6/8;
-        display: flex;
-        width: 65%;
-        height:30%;
-        align-self: start;
-        justify-self: start;
-        margin-left: 8%;
-    }
-    .fondoAprendiendo{
-        grid-column:6/8;
-        display: flex;
-        width: 65%;
-        height: 40%;
-        align-self: end;
-        justify-self: start;
-        margin-left: 8%;    
-    }
-    .fondoAprendiendo> h4{
-        font-size: 95%;
-    }    
-    .hBlandas {
-        grid-column: 2/8;
-        width: 90%;
-        justify-self: start;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-    .hBlandas> .titulos{
-        width: auto;
-        height: 100%;
-        padding: 0px;
-        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.4);
-        align-self: center;
-     }
-     .piePagina{
-        width: 100%;
-        grid-column: 1/8;
-        margin-left: -25px;
-        justify-content: center;    
-    }
-    .contenedorHabilidades .piePagina .areas{
-        width: 89%;
-        margin-left: -30px;
-    }
-    /*--------------------FORMACION------------------------*/
-    .contenedorFormacion .fondoH {grid-column:1/4 ;}
-    .contenedorFormacion .tituloHabilidades{grid-column: 3/7;}
-    .fondoFormacion{grid-column: 2/8;}
-    .contenedorFormacion .piePagina{margin: 0px;}
 
-    /*--------------------CONTACTO-------------------------*/
-    .contenedorContacto .fondoA{
-        grid-row: 1;
-        grid-column: 2/5;
+    .miFoto {
+        width: 200px;
+        height: 200px;
     }
-    .bloques{
-        z-index: 3;        
-        grid-column: 3/5;        
-        align-self: end;
-        justify-self: center;
-    }
-    .linkedin{
-        grid-row: 2;
-        grid-column: 2/3;
-        height: 60%;
-    }
-    .descripcionContacto{
-        z-index: 0;
+
+    .fondoDescripcion {
         width: 95%;
-        border-radius: 50% 50% 50% 50%;
-        margin-left: -25%;
+        height: auto;
     }
-     .linkdn{        
-        grid-row: 2;
-        grid-column: 3/5;        
-        align-self: end;
+
+    .contenedorHabilidades {
+        grid-template-columns: repeat(8, 1fr);
     }
-    .email{
-        grid-row: 3;
-        grid-column: 2/3;
-        height: 60%;
-        align-self: center;
-    }
-    .mail{
-        grid-row: 3;
-        grid-column: 3/5;        
-        align-self: center;
-        justify-content: start;
-    }
-    .telefono{
-        grid-row: 4;
-        grid-column: 2/3;
-        height: 60%;
-        align-self: center;
-    }
-    .tel{
-        grid-row: 4;
-        grid-column: 3/5;
-        align-self: center;
-    }
+    
+    .tituloHabilidades { grid-column: 2 / 8; }
+    .conocimiento { grid-column: 2 / 4; }
+    .fondoIconosHabilidades { grid-column: 4 / 8; }
+    .mejorando { grid-column: 2 / 4; }
+    .fondoIconosMejorando { grid-column: 4 / 6; }
+    .aprendiendo { grid-column: 6 / 7; }
+    .fondoAprendiendo { grid-column: 7 / 8; }
+    .hBlandas { grid-column: 2 / 8; }
 }
 
-@media (max-width: 480px) {
-    /*-----------------------HOME------------------------*/
+/* Tablet Pequeña / Móvil Horizontal */
+@media (max-width: 768px) {
     .contenedor {
         grid-template-columns: 5% 90% 5%;
-        grid-template-rows: 10% 45% 35% 10%;
+        grid-template-rows: 15% 40% 35% 10%;
     }
+
     .presentacion {
-        width: 80vw;
-        height: 25vh;
-        align-self: end;
+        width: 70vw;
+        height: 30vh;
     }
-    .areasPresentacion {
-        width: 100%;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 1fr;
-        gap: 15px;
-        margin-left: 0px;
-    }
-    .iconosPresentacion {
-        width: 45px;
-        height: 45px;
-    }
-    .descripcionPresentacion {
-        font-size: 9px;
-        margin-top: 40px;
-    }
-    /*------------------------SOBRE MI----------------------*/ 
+
     .contenedorSobreMi {
         grid-template-columns: 10% 80% 10%;
-        grid-template-rows: 30% 60% 10%;
-    }
-    .miFoto {
-        width: 100%;
-        height: 30vh;
-        grid-row: 1;
-        grid-column: 2;
-        align-self: start;
-        justify-self: center;
-        justify-content: center;
-        margin-top: -10px;
-    }
-    .fondoDescripcion {
-        width: 80vw;
-        height:55vh;
-    }
-    .fondoDescripcion p{ font-size: 90%;}
-    .iconos {
-        width: 45px;
-        height: 45px;
-    }
-    .descripcion {
-        font-size: 9px;
-        margin-top: 40px;
-    }
-    .piePagina{
-        height: 9vh;
-       margin: 0px;
-    }
-    /*----------------------------HABILIDADES-------------------*/
-    .contenedorHabilidades{
-        grid-template-columns: repeat(8, minmax(40px, 1fr));
-        grid-template-rows: repeat(12, minmax(20px, 1fr));
-    }
-    .contenedorHabilidades .fondoH{
-        grid-row: 1;
-        grid-column: 1/5;
-    }    
-    .tituloHabilidades {
-        width: auto;
-        height: 20%;
-        grid-column: 1 / 9;
-        grid-row: 2;
-        align-self: end;
-        padding: 5px;
-        justify-content: center;
-        justify-self: center;
-    }
-    .tituloHabilidades h2{
-        width: 100%;
-        font-size: 105%;
-    }
-    .titulos{
-        width:90%;
-        height: 40%;
-        grid-column: 2 / 8;
-        justify-content: center;
-        font-size: 100%;
-        border-radius: 0px;
-    }
-    .conocimiento{
-        grid-row: 3;  
-        align-self: end;
-        justify-self: center;
-    }
-    .fondoIconos{
-        width: 90%;
-        height: 85%;   
-        border-radius: 0% 0% 10% 10%;   
-        justify-self: center;
-        grid-column: 2 / 8;
-    }
-    .fondoIconosHabilidades {
-        grid-row: 4;
-        align-self: start;
-    }
-    .mejorando{
-        grid-row: 5;
-        align-self: end;
-    }
-    .fondoIconosMejorando{
-        grid-row: 6;    
-    }
-    .aprendiendo{        
-        grid-row: 7;
-        align-self: end;
-        margin-left: 5px;
-    }
-    .fondoAprendiendo{
-        height: 75%;
-        grid-row: 8;
-        align-self: start;
-        margin: 0px;    
-        justify-self: start;
-        margin-left: 5px;
-    }
-    .fondoAprendiendo> h4{font-size: 100%;}
-    .hBlandas {
-       width: 100%;
-       height: 100%;
-       border:none;
-       display: flex;
-       flex-direction: column;
-       grid-column: 1/9;
-       grid-row: 10/11;
-    }
-    .hBlandas> .titulos{
-        width: 80%;
-        height: 100%;
-        padding: 2px;
-     }
-    .contenedorHabilidades .piePagina{
-        grid-row: 12;
-        width: 100%;
-        grid-column: 1/10;
-        margin: 0px;
-        justify-content: center;    
-    }
-    .contenedorHabilidades .piePagina .areas{
-        width: 90%;
-        margin-left: 0px;
-    }
-    /*----------------------FORMACION-------------------------*/
-    .contenedorFormacion{grid-template-rows: repeat(9, minmax(20px, 1fr));}
-    .contenedorFormacion .fondoH{grid-column: 1/6;}
-    .contenedorFormacion .tituloHabilidades{
-        width: 80%;
-        grid-row: 2;
-        align-self: center;
-    }
-    .fondoFormacion{
-        grid-row: 3/9;
+        grid-template-rows: auto auto auto;
+        padding-top: 20px;
         gap: 20px;
-        display: flex;
-        flex-direction: column;
-        height: 95%;
-        align-self: start;
-        justify-content: center;
     }
-    .fondoFormacion .desarrollo{
-        display: flex;
-        flex-direction: column;
-    }
-    .desarrollo{
-        height: auto;
-        justify-content: center;
-    }
-    .desarrollo :nth-child(2){
-        height: 21%;
-        padding: 10px;
-    }
-    .contenedorFormacion .piePagina{grid-row: 9;} 
-    /*-----------------------------CONTACTO------------------*/
-    .contenedorContacto{grid-template-rows: repeat(5,1fr);}
-    .contenedorContacto .fondoA{
-        align-content: center;
+
+    .miFoto {
+        grid-column: 2;
         grid-row: 1;
+        width: 180px;
+        height: 180px;
     }
-    .contenedorContacto .piePagina{grid-row: 5;}
-    .bloques{
-        width: 110%;
-        align-self: center;
+
+    .fondoDescripcion {
+        grid-column: 2;
+        grid-row: 2;
+        width: 100%;
     }
+
+    .piePagina {
+        grid-row: 3;
+    }
+
+    .areas {
+        gap: 10px;
+    }
+
+    .iconos {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Habilidades Responsive */
+    .contenedorHabilidades {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .tituloHabilidades { width: 100%; }
+    .conocimiento, .mejorando, .aprendiendo { width: 100%; }
+    .fondoIconos, .fondoIconosHabilidades, .fondoIconosMejorando, .fondoAprendiendo { width: 100%; }
+
+    /* Formación Responsive */
+    .contenedorFormacion {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    /* Contacto Responsive */
+    .contenedorContacto {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+    }
+
+    .bloques, .descripcionContacto {
+        width: 90%;
+        max-width: 300px;
+    }
+
     .descripcionContacto {
-        width: 135%;
-        align-self: center;
+        border-radius: 10px;
     }
-    .contenedorContacto .piePagina{ height: 9vh;}
 }
 
+/* Smartphone (Celulares) */
+@media (max-width: 480px) {
+    .presentacion {
+        width: 85vw;
+        height: 25vh;
+    }
+
+    .areasPresentacion {
+        gap: 5px;
+    }
+
+    .iconosPresentacion {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fondoDescripcion p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .desarrollo {
+        flex-direction: column;
+    }
+
+    .desarrollo > div:nth-child(1),
+    .desarrollo > div:nth-child(2) {
+        width: 100%;
+    }
+
+    .piePagina {
+        border-radius: 20px 20px 0 0;
+    }
+}
